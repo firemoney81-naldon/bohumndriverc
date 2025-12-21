@@ -1,331 +1,441 @@
 
-  <style>
-    /* 폰트 및 부드러운 색감 설정 */
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
-    
-    :root {
-      --primary-color: #2c5282;
-      --secondary-color: #ebf8ff;
-      --accent-color: #3182ce;
-      --text-main: #2d3748;
-      --text-sub: #4a5568;
-      --bg-light: #f7fafc;
-      --white: #ffffff;
-      --border-color: #e2e8f0;
-    }
-
-    body { 
-      font-family: 'Noto Sans KR', sans-serif; 
-      line-height: 1.8; 
-      margin: 0; 
-      padding: 0; 
-      background-color: var(--bg-light); 
-      color: var(--text-main); 
-    }
-
-    /* 시각적 계층 구조 디자인 */
-    header { 
-      background: linear-gradient(135deg, var(--primary-color) 0%, #1a365d 100%); 
-      color: var(--white); 
-      padding: 60px 20px; 
-      text-align: center; 
-    }
-
-    header h1 { font-size: 2.5rem; margin-bottom: 15px; font-weight: 700; }
-    header p { font-size: 1.1rem; opacity: 0.9; }
-
-    nav { 
-      position: sticky; top: 0; background: var(--white); 
-      border-bottom: 1px solid var(--border-color); 
-      z-index: 1000; padding: 10px 0;
-    }
-
-    nav ul { 
-      display: flex; justify-content: center; list-style: none; 
-      margin: 0; padding: 0; flex-wrap: wrap;
-    }
-
-    nav ul li { margin: 5px 15px; }
-    nav ul li a { 
-      text-decoration: none; color: var(--text-sub); 
-      font-weight: 500; font-size: 0.95rem; transition: color 0.3s;
-    }
-    nav ul li a:hover { color: var(--accent-color); }
-
-    section { 
-      max-width: 1000px; margin: 40px auto; padding: 40px; 
-      background: var(--white); border-radius: 16px; 
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05); 
-    }
-
-    h2 { 
-      font-size: 1.8rem; color: var(--primary-color); 
-      border-left: 5px solid var(--accent-color); 
-      padding-left: 15px; margin-bottom: 25px; 
-    }
-
-    h3 { font-size: 1.4rem; color: var(--accent-color); margin-top: 30px; }
-
-    p { margin-bottom: 20px; text-align: justify; }
-
-    /* 표 스타일 최적화 */
-    .table-wrapper { overflow-x: auto; margin: 25px 0; }
-    table { width: 100%; border-collapse: collapse; min-width: 600px; }
-    th { background-color: var(--secondary-color); color: var(--primary-color); font-weight: 700; }
-    th, td { border: 1px solid var(--border-color); padding: 15px; text-align: center; }
-    tr:nth-child(even) { background-color: #fafbfc; }
-
-    /* 리스트 스타일 */
-    .info-list { list-style: none; padding: 0; }
-    .info-list li { 
-      background: var(--bg-light); margin-bottom: 10px; 
-      padding: 15px 20px; border-radius: 8px; border-left: 4px solid var(--accent-color);
-    }
-
-    /* 링크 스타일 */
-    .external-links { background: #f1f5f9; padding: 20px; border-radius: 10px; margin-top: 30px; }
-    .external-links a { color: var(--accent-color); text-decoration: none; display: block; margin: 5px 0; }
-    .external-links a:hover { text-decoration: underline; }
-
-    /* 입력 양식 (체류시간 증대용) */
-    .form-container { 
-      background: var(--secondary-color); padding: 30px; border-radius: 12px; 
-      margin-top: 40px; border: 1px solid var(--accent-color);
-    }
-    .form-group { margin-bottom: 15px; }
-    .form-group label { display: block; margin-bottom: 5px; font-weight: 600; }
-    .form-group input, .form-group select, .form-group textarea { 
-      width: 100%; padding: 12px; border: 1px solid var(--border-color); 
-      border-radius: 6px; box-sizing: border-box;
-    }
-    
-    .btn-submit { 
-      background: var(--primary-color); color: white; border: none; 
-      padding: 15px 30px; border-radius: 8px; font-size: 1.1rem; 
-      cursor: pointer; width: 100%; font-weight: 700; transition: background 0.3s;
-    }
-    .btn-submit:hover { background: var(--accent-color); }
-
-    footer { text-align: center; padding: 40px 20px; color: var(--text-sub); font-size: 0.9rem; }
-
-    @media (max-width: 768px) {
-      header h1 { font-size: 1.8rem; }
-      section { padding: 20px; margin: 20px; }
-    }
-  </style>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [{
-      "@type": "Question",
-      "name": "누구나운전자보험의 필요성은 무엇인가요?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "운전자보험은 자동차보험에서 보장하지 않는 형사적, 행정적 책임을 보장합니다. 특히 12대 중과실 사고 시 발생하는 합의금과 벌금 등을 지원합니다."
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "InsuranceAgency",
+      "name": "누구나운전자보험 정보센터",
+      "url": "https://yourdomain.com",
+      "description": "운전자보험의 필수 보장 내용과 합리적인 보험료 산출 방식을 안내하는 전문 정보 사이트입니다.",
+      "areaServed": "KR",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "운전자보험 서비스",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "교통사고 처리 지원금 보장"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "운전자 벌금 및 변호사 선임 비용"
+            }
+          }
+        ]
       }
-    }]
-  }
-  </script>
+    }
+    </script>
+
+    <style>
+        :root {
+            --primary-color: #4a90e2;
+            --secondary-color: #f7f9fc;
+            --accent-color: #ff8c00;
+            --text-dark: #2c3e50;
+            --text-light: #5d6d7e;
+            --border-color: #d1d9e6;
+        }
+
+        body {
+            font-family: "Pretendard", "Noto Sans KR", sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            background-color: var(--secondary-color);
+            color: var(--text-dark);
+            word-break: keep-all;
+        }
+
+        header {
+            background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+            color: white;
+            padding: 4rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        nav {
+            background: white;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 0;
+            padding: 0;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 3rem auto;
+            padding: 3rem;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        section {
+            margin-bottom: 5rem;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            border-left: 8px solid var(--primary-color);
+            padding-left: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        h3 {
+            font-size: 1.6rem;
+            color: var(--text-dark);
+            margin-top: 2.5rem;
+            background-color: #f0f7ff;
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        p {
+            font-size: 1.15rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+            text-align: justify;
+        }
+
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0,0,0,0.03);
+        }
+
+        .info-table th {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1.2rem;
+            font-size: 1.1rem;
+        }
+
+        .info-table td {
+            padding: 1.2rem;
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .info-table tr:nth-child(even) {
+            background-color: #fafcfe;
+        }
+
+        /* 체류시간 증대를 위한 입력 양식 스타일 */
+        .calculator-box {
+            background-color: #fdfdfd;
+            border: 2px solid #eef2f7;
+            padding: 2.5rem;
+            border-radius: 15px;
+            margin: 3rem 0;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+
+        .btn-submit {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 1.2rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.3s;
+        }
+
+        .btn-submit:hover {
+            background-color: #e67e00;
+        }
+
+        .external-links {
+            background-color: #f1f4f8;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-top: 3rem;
+        }
+
+        .external-links a {
+            display: block;
+            color: var(--primary-color);
+            text-decoration: none;
+            margin-bottom: 0.8rem;
+            font-weight: 500;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            padding: 1.5rem 0;
+        }
+
+        .faq-question {
+            font-weight: 700;
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            margin-top: 1rem;
+            color: var(--text-light);
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        footer {
+            background-color: #34495e;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 3rem;
+            margin-top: 5rem;
+        }
+
+        .keyword-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 2rem;
+        }
+
+        .keyword-tag {
+            background-color: #eef2f7;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #7f8c8d;
+        }
+    </style>
 </head>
 <body>
 
 <header>
-  <h1>누구나운전자보험 상세 비교 및 2026년 최신 가이드</h1>
-  <p>안전 운전을 위한 필수 선택, 운전자보험의 모든 정보를 한눈에 확인하세요.</p>
+    <h1>누구나운전자보험 핵심 가이드 및 비교 분석</h1>
+    <nav>
+        <ul>
+            <li><a href="#intro">운전자보험이란</a></li>
+            <li><a href="#essential">필수 보장 항목</a></li>
+            <li><a href="#compare">보험료 비교</a></li>
+            <li><a href="#faq">자주 묻는 질문</a></li>
+            <li><a href="#consult">무료 진단 신청</a></li>
+        </ul>
+    </nav>
 </header>
 
-<nav>
-  <ul>
-    <li><a href="#intro">운전자보험이란</a></li>
-    <li><a href="#coverage">핵심 보장 내용</a></li>
-    <li><a href="#comparison">상품별 비교</a></li>
-    <li><a href="#law2026">2026년 개정법규</a></li>
-    <li><a href="#checklist">가입 체크리스트</a></li>
-    <li><a href="#consulting">무료 견적 상담</a></li>
-  </ul>
-</nav>
+<main>
+    <section id="intro">
+        <h2>누구나운전자보험 가입 전 반드시 알아야 할 기초 지식</h2>
+        <p>
+            운전을 하는 사람이라면 누구나 사고의 위험으로부터 자유로울 수 없습니다. 자동차보험이 상대방의 피해를 보상하는 배상 책임 위주라면, 누구나운전자보험은 운전자 본인에게 발생하는 행정적, 형사적 책임을 방어하기 위한 목적으로 설계되었습니다. 특히 최근 교통사고 처벌 강화 추세에 따라 민사적인 보상만으로는 감당하기 어려운 고액의 벌금이나 합의금이 발생할 수 있어 그 중요성이 날로 커지고 있습니다.
+        </p>
+        <p>
+            많은 분이 자동차보험의 법률 비용 지원 특약과 운전자보험을 혼동하시곤 합니다. 하지만 보장 범위와 한도 면에서 큰 차이가 있습니다. 누구나운전자보험은 본인 과실이 큰 12대 중과실 사고(음주, 무면허 제외) 발생 시 형사 합의금과 변호사 선임 비용을 실손 보장하여 경제적 몰락을 방지하는 최후의 보루 역할을 합니다.
+        </p>
+        
+        <div class="keyword-cloud">
+            <span class="keyword-tag">운전자보험 추천</span>
+            <span class="keyword-tag">비갱신형 운전자보험</span>
+            <span class="keyword-tag">만기환급형 운전자보험</span>
+            <span class="keyword-tag">운전자보험 필요성</span>
+            <span class="keyword-tag">12대 중과실 사고 보장</span>
+            <span class="keyword-tag">운전자보험 벌금 한도</span>
+        </div>
+    </section>
 
-<section id="intro">
-  <h2>누구나운전자보험의 정의와 중요성</h2>
-  <p>
-    운전자보험은 자동차 사고 발생 시 운전자 본인에게 발생하는 형사적 책임을 보장하기 위해 가입하는 상품입니다. 
-    많은 분들이 자동차보험과 혼동하시지만, 자동차보험은 상대방의 피해를 보상하는 민사적 책임이 주 목적이며 
-    운전자보험은 운전자 본인의 벌금, 변호사 선임비용, 교통사고 처리 지원금 등을 중점적으로 다룹니다.
-  </p>
-  <p>
-    최근 법규 강화로 인해 12대 중과실 사고에 대한 처벌 수위가 높아지면서 누구나운전자보험의 가입은 선택이 아닌 필수사항이 되었습니다. 
-    특히 어린이 보호구역 내 사고(민식이법)나 횡단보도 사고 등 예기치 못한 상황에서 경제적 손실을 최소화하는 핵심 수단이 됩니다.
-  </p>
-</section>
+    <section id="essential">
+        <h2>누구나운전자보험의 3대 필수 핵심 담보</h2>
+        <p>
+            보험료를 절약하면서도 실질적인 혜택을 받기 위해서는 불필요한 특약은 줄이고 반드시 필요한 핵심 담보에 집중해야 합니다. 다음은 누구나운전자보험 가입 시 반드시 체크해야 할 3대 구성 요소입니다.
+        </p>
 
-<section id="coverage">
-  <h2>운전자보험의 핵심 3대 보장 항목</h2>
-  <p>운전자보험을 구성할 때 반드시 확인해야 할 3가지 필수 특약은 다음과 같습니다.</p>
-  <ul class="info-list">
-    <li>
-      <strong>교통사고 처리 지원금:</strong> 피해자와의 형사 합의금을 지원합니다. 최근 보장 한도가 2억 원 이상으로 확대되는 추세입니다.
-    </li>
-    <li>
-      <strong>변호사 선임 비용:</strong> 구속 영장에 의한 구속이나 공소 제기 시 변호사를 선임하기 위한 비용을 실비로 보장합니다.
-    </li>
-    <li>
-      <strong>운전자 벌금:</strong> 도로교통법 위반으로 확정 판결을 받은 벌금액을 보장하며, 대인/대물 벌금을 모두 포함합니다.
-    </li>
-  </ul>
-</section>
+        <table class="info-table">
+            <thead>
+                <tr>
+                    <th>핵심 담보명</th>
+                    <th>보장 내용 상세</th>
+                    <th>가입 필요성</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>교통사고 처리 지원금</td>
+                    <td>피해자 사망 또는 중상해 시 형사 합의금 지원 (최대 2억 원)</td>
+                    <td>가장 큰 경제적 손실을 막아주는 핵심 항목</td>
+                </tr>
+                <tr>
+                    <td>운전자 벌금 (대인/대물)</td>
+                    <td>민식기법 등 관련 법규에 따른 벌금 실손 보상 (최대 3천만 원)</td>
+                    <td>법적 처벌에 따른 즉각적인 비용 지출 대비</td>
+                </tr>
+                <tr>
+                    <td>변호사 선임 비용</td>
+                    <td>구속 영장 발부 또는 기소 시 변호사 비용 지원 (최대 5천만 원)</td>
+                    <td>전문적인 법률 조력을 받기 위한 필수 자금</td>
+                </tr>
+            </tbody>
+        </table>
 
-<section id="comparison">
-  <h2>2026년 주요 보험사별 누구나운전자보험 비교</h2>
-  <p>각 보험사별로 제공하는 특약과 가격이 상이하므로 객관적인 비교가 필요합니다.</p>
-  <div class="table-wrapper">
-    <table>
-      <thead>
-        <tr>
-          <th>구분</th>
-          <th>A사 (표준형)</th>
-          <th>B사 (실속형)</th>
-          <th>C사 (고급형)</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>월 평균 보험료</td>
-          <td>12,000원</td>
-          <td>9,900원</td>
-          <td>18,500원</td>
-        </tr>
-        <tr>
-          <td>교통사고처리지원금</td>
-          <td>2억 원</td>
-          <td>1.5억 원</td>
-          <td>2.5억 원</td>
-        </tr>
-        <tr>
-          <td>변호사선임비용</td>
-          <td>5,000만 원</td>
-          <td>3,000만 원</td>
-          <td>7,000만 원</td>
-        </tr>
-        <tr>
-          <td>자동차사고부상치료비</td>
-          <td>30만 원</td>
-          <td>10만 원</td>
-          <td>50만 원</td>
-        </tr>
-        <tr>
-          <td>특징</td>
-          <td>균형 잡힌 보장</td>
-          <td>최저가 실무 위주</td>
-          <td>가족 통합 보장 가능</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</section>
+        <h3>함께 많이 찾는 특약: 부상치료비와 일상생활배상책임</h3>
+        <p>
+            기본적인 형사적 책임 외에도 자가운전 중 발생하는 본인의 상해를 보상받고 싶다면 자동차사고 부상치료비(자부상) 특약을 고려해볼 만합니다. 또한 누구나운전자보험에 가족일상생활배상책임 특약을 추가하면 타인에게 끼친 재산상 손해까지 폭넓게 보장받을 수 있어 효율적입니다.
+        </p>
+    </section>
 
-<section id="law2026">
-  <h2>2026년 도로교통법 개정 및 보험 영향 분석</h2>
-  <p>
-    2026년부터 시행되는 도로교통법 개정안에 따르면 보행자 보호 의무가 더욱 강화됩니다. 
-    특히 우회전 시 일시 정지 위반에 대한 과태료 상향과 자율주행 차량 사고 시 책임 소재 명확화가 주요 쟁점입니다. 
-    누구나운전자보험은 이러한 법적 변화에 맞춰 '경찰 조사 단계 변호사 선임 비용' 보장을 강화하는 등 진화하고 있습니다.
-  </p>
-  <p>
-    또한, 고령 운전자 표지 부착 의무화 및 음주운전 방지 장치 장착 조건부 면허 제도 확대로 인해 
-    관련 사고 시 보장 범위가 좁아질 수 있으므로 가입 전 약관의 면책 조항을 반드시 확인해야 합니다.
-  </p>
-</section>
+    <section class="calculator-box" id="consult">
+        <h2>내 맞춤 운전자보험료 실시간 확인하기</h2>
+        <p>정확한 보험료 산출을 위해 아래 정보를 입력해 주세요. 귀하의 연령과 직업 급수에 따라 최적화된 견적을 안내해 드립니다.</p>
+        <form action="#" method="post">
+            <div class="form-group">
+                <label>성함</label>
+                <input type="text" placeholder="성함을 입력하세요">
+            </div>
+            <div class="form-group">
+                <label>생년월일 (6자리)</label>
+                <input type="number" placeholder="예: 850101">
+            </div>
+            <div class="form-group">
+                <label>운전 용도</label>
+                <select>
+                    <option>자가용 운전자</option>
+                    <option>영업용 운전자 (화물/택시)</option>
+                    <option>비운전자</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>주요 관심 보장 항목</label>
+                <textarea rows="4" placeholder="특별히 보장받고 싶은 부분이나 궁금한 점을 적어주세요"></textarea>
+            </div>
+            <div class="form-group">
+                <label>연락처</label>
+                <input type="tel" placeholder="010-0000-0000">
+            </div>
+            <button type="submit" class="btn-submit">맞춤 보장 분석 신청하기</button>
+        </form>
+    </section>
 
-<section id="checklist">
-  <h2>운전자보험 가입 시 필수 체크리스트</h2>
-  <p>합리적인 가입을 위해 다음의 5가지 요소를 검토하시기 바랍니다.</p>
-  <ol class="info-list" style="list-style: decimal; padding-left: 40px;">
-    <li>만기 환급금 여부 확인: 순수보장형은 보험료가 저렴하고 환급형은 만기 시 보험료의 일부를 돌려받습니다.</li>
-    <li>비갱신형 vs 갱신형: 장기적으로 유지하려면 보험료가 변동되지 않는 비갱신형이 유리합니다.</li>
-    <li>중복 가입 여부: 벌금 및 합의금 특약은 실제 손해액만 보상하므로 여러 개 가입해도 중복 보상이 불가합니다.</li>
-    <li>부가 서비스 확인: 무료 견인 서비스, 차량 진단 서비스 등 보험사별 차별화 혜택을 비교하세요.</li>
-    <li>가족 공유 여부: 1인 가입보다 부부 한정이나 가족 특약으로 가입 시 가성비가 상승합니다.</li>
-  </ol>
-</section>
+    <section id="compare">
+        <h2>운전자보험 비교 시 주의사항 및 꿀팁</h2>
+        <p>
+            누구나운전자보험은 보험사별로 보장 한도와 보험료 차이가 상당합니다. 특히 최근에는 변호사 선임 비용의 보장 시점이 '경찰 조사 단계'부터 가능하도록 개선된 상품들이 출시되고 있으므로, 구형 보험을 유지 중이라면 반드시 리모델링 검토가 필요합니다.
+        </p>
+        <h3>보험료 절약을 위한 5가지 체크리스트</h3>
+        <ol>
+            <li>만기환급형보다는 순수보장형을 선택하여 월 납입료를 낮추십시오.</li>
+            <li>보험 기간을 80세 또는 100세까지 길게 설정하여 중도 재가입의 번거로움을 피하십시오.</li>
+            <li>이미 가입된 실손보험이나 자동차보험 특약과 중복되는 내용이 없는지 확인하십시오.</li>
+            <li>다이렉트 채널을 이용하면 설계사 수수료가 제외되어 약 10% 이상 저렴합니다.</li>
+            <li>납입 면제 기능이 포함되어 있는지 확인하여 사고 시 보험료 부담을 줄이십시오.</li>
+        </ol>
+    </section>
 
-<section class="external-links">
-  <h3>공인된 신뢰성 있는 정보처</h3>
-  <p>보험 가입 및 교통 법규와 관련된 공식 정보를 아래 사이트에서 확인하실 수 있습니다.</p>
-  <a href="https://www.klia.or.kr/" target="_blank" rel="nofollow">생명보험협회 공식 홈페이지</a>
-  <a href="https://www.knia.or.kr/" target="_blank" rel="nofollow">손해보험협회 공식 홈페이지</a>
-  <a href="https://www.fss.or.kr/" target="_blank" rel="nofollow">금융감독원 파인 (보험 다모아)</a>
-  <a href="https://www.koroad.or.kr/" target="_blank" rel="nofollow">도로교통공단 안전운전 통합민원</a>
-  <a href="https://namu.wiki/w/%EC%9A%B4%EC%A0%84%EC%9E%90%EB%B3%B4%ED%97%98" target="_blank" rel="nofollow">나무위키: 운전자보험 상세 정보</a>
-</section>
+    <section id="faq">
+        <h2>자주 묻는 질문 (FAQ)</h2>
+        <div class="faq-item">
+            <div class="faq-question">Q. 자동차보험에 가입되어 있는데 운전자보험이 꼭 필요한가요?</div>
+            <div class="faq-answer">네, 자동차보험은 상대방의 피해 보상(민사)을 주 목적으로 하지만, 운전자보험은 운전자 본인의 형사적 책임(벌금, 합의금, 변호사비)을 보장하기 때문에 성격이 완전히 다릅니다.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Q. 음주운전이나 무면허 사고도 보장되나요?</div>
+            <div class="faq-answer">아니요, 음주운전, 무면허 운전, 뺑소니 사고는 보험의 도덕적 해이를 방지하기 위해 모든 보험사에서 보장 대상에서 제외하고 있습니다.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Q. 부부가 함께 보장받는 방법이 있나요?</div>
+            <div class="faq-answer">일부 보험사에서는 '부부형 특약'을 통해 하나의 증권으로 부부가 동시에 보장받을 수 있는 상품을 제공하고 있으며, 각각 가입하는 것보다 비용 면에서 유리할 수 있습니다.</div>
+        </div>
+    </section>
 
-<section id="consulting">
-  <h2>누구나운전자보험 맞춤형 무료 컨설팅 신청</h2>
-  <p>현재 본인의 운전 습관과 연령에 맞는 최적의 상품을 전문가가 분석해 드립니다. 아래 양식을 작성해 주세요.</p>
-  
-  <div class="form-container">
-    <form action="#" method="POST">
-      <div class="form-group">
-        <label for="user-name">성함 (필수)</label>
-        <input type="text" id="user-name" name="user-name" placeholder="실명을 입력해 주세요" required>
-      </div>
-      
-      <div class="form-group">
-        <label for="user-phone">연락처 (필수)</label>
-        <input type="tel" id="user-phone" name="user-phone" placeholder="010-0000-0000" required>
-      </div>
-
-      <div class="form-group">
-        <label for="birth-date">생년월일 (예: 19900101)</label>
-        <input type="text" id="birth-date" name="birth-date" maxlength="8">
-      </div>
-
-      <div class="form-group">
-        <label for="driver-type">운전 용도</label>
-        <select id="driver-type" name="driver-type">
-          <option value="personal">자가용(출퇴근용)</option>
-          <option value="business">영업용(택시/화물)</option>
-          <option value="delivery">배달/운송</option>
-          <option value="weekend">주말 운전</option>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label for="interest">관심 항목 (중복 선택 가능)</label>
-        <select id="interest" name="interest" multiple style="height: 100px;">
-          <option value="price">저렴한 보험료</option>
-          <option value="coverage">넓은 보장 범위</option>
-          <option value="family">가족 통합 보장</option>
-          <option value="refund">만기 환급금</option>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label for="history">최근 3년 내 사고 이력</label>
-        <textarea id="history" name="history" rows="3" placeholder="없음 혹은 간단한 사고 내용 기재"></textarea>
-      </div>
-
-      <div class="form-group">
-        <label for="message">전문가에게 남길 메시지</label>
-        <textarea id="message" name="message" rows="4" placeholder="비교를 원하는 보험사나 구체적인 희망 월 납입금을 적어주세요."></textarea>
-      </div>
-
-      <div class="form-group" style="display: flex; align-items: flex-start;">
-        <input type="checkbox" id="privacy" name="privacy" required style="width: auto; margin-right: 10px; margin-top: 5px;">
-        <label for="privacy" style="font-size: 0.85rem;">개인정보 수집 및 이용 동의 (맞춤 견적 산출 및 상담 목적)</label>
-      </div>
-
-      <button type="submit" class="btn-submit">실시간 최저가 견적 받기</button>
-    </form>
-  </div>
-</section>
+    <section class="external-links">
+        <h2>신뢰할 수 있는 외부 참조 정보</h2>
+        <p>더 상세하고 공신력 있는 정보는 아래의 기관 및 사이트를 통해 확인하실 수 있습니다.</p>
+        <a href="https://www.fss.or.kr" target="_blank">금융감독원 - 보험 제도 및 소비자 보호 정보</a>
+        <a href="https://www.kidi.or.kr" target="_blank">보험개발원 - 자동차 및 운전자 보험 통계 데이터</a>
+        <a href="https://namu.wiki/w/%EC%9A%B4%EC%A0%84%EC%9E%90%EB%B3%B4%ED%97%98" target="_blank">나무위키 - 운전자보험 정의 및 특징</a>
+        <a href="https://www.klac.or.kr" target="_blank">대한법률구조공단 - 교통사고 법률 상담</a>
+        <a href="https://www.knia.or.kr" target="_blank">손해보험협회 - 공시실 보험료 비교</a>
+    </section>
+</main>
 
 <footer>
-  <p>© 2026 누구나운전자보험 정보 포털. All Rights Reserved.</p>
-  <p>본 사이트는 사용자에게 정확한 보험 정보를 제공하기 위해 노력하며, 최종 가입 결정은 보험사별 약관을 참조하시기 바랍니다.</p>
-  <p>제휴 문의: contact@driver-info-2026.kr | 고객센터: 1588-0000</p>
+    <p>&copy; 2026 누구나운전자보험 정보센터. All Rights Reserved.</p>
+    <p>본 사이트는 정보 제공을 목적으로 하며, 실제 계약 체결 시에는 반드시 해당 보험사의 약관을 참조하시기 바랍니다.</p>
 </footer>
 
-</body>
-</html>
+<script>
+    // FAQ 아코디언 인터랙션
+    document.querySelectorAll('.faq-question').forEach(q => {
+        q.addEventListener('click', () => {
+            const item = q.parentElement;
+            item.classList.toggle('active');
+        });
+    });
+
+    // 단순 스무스 스크롤 기능
+    document.querySelectorAll('nav a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+
+  
